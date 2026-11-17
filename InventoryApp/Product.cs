@@ -6,5 +6,11 @@ namespace InventoryApp
 {
     internal class Product
     {
+        public string name;
+        public int price;
+        public int sell;
+        public int stock;
+        public int minstock;
+
     }
 }

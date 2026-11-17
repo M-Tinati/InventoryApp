@@ -129,6 +129,7 @@
             btnadd.TabIndex = 2;
             btnadd.Text = "ذخیره";
             btnadd.UseVisualStyleBackColor = true;
+            btnadd.Click += btnadd_Click;
             // 
             // FormAddProduct
             // 
