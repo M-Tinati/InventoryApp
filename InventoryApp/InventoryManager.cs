@@ -1,30 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace InventoryApp
 {
-    internal class InventoryManager
+    public class InventoryManager
     {
-        
-        
-        Product[] products = new Product[3];
-        
-        public void loop()
+        private List<Product> products = new List<Product>();
+
+        public void AddProduct(Product product)
         {
-            
-            for (int i = 0; i < products.Length ; i++)
-            {
-                Product p1 = new Product();
-                p1.name = "";
-                p1.price = 100;
-                p1.sell = 200;
-                p1.stock = 10;
-                p1.minstock = 3;
-                MessageBox.Show($"Name : {p1.name},Price : {p1.price}, Sell : {p1.sell} , Stock :{p1.stock}, MinStock : {p1.minstock}");
-            }
+            products.Add(product);
         }
-        
+
+        public List<Product> GetProducts()
+        {
+            return products;
+        }
     }
-    
 }

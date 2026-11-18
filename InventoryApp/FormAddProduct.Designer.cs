@@ -47,7 +47,7 @@
             lblPrice.Location = new Point(312, 50);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(61, 15);
-            lblPrice.TabIndex = 0;
+            lblPrice.TabIndex = 7;
             lblPrice.Text = "قیمت خرید";
             // 
             // lblName
@@ -56,7 +56,7 @@
             lblName.Location = new Point(333, 9);
             lblName.Name = "lblName";
             lblName.Size = new Size(40, 15);
-            lblName.TabIndex = 0;
+            lblName.TabIndex = 6;
             lblName.Text = "نام کالا";
             // 
             // lblStock
@@ -65,7 +65,7 @@
             lblStock.Location = new Point(299, 130);
             lblStock.Name = "lblStock";
             lblStock.Size = new Size(74, 15);
-            lblStock.TabIndex = 0;
+            lblStock.TabIndex = 9;
             lblStock.Text = "موجودی اولیه";
             // 
             // lblSell
@@ -74,7 +74,7 @@
             lblSell.Location = new Point(305, 88);
             lblSell.Name = "lblSell";
             lblSell.Size = new Size(68, 15);
-            lblSell.TabIndex = 0;
+            lblSell.TabIndex = 8;
             lblSell.Text = "قیمت فروش";
             // 
             // lblMinStock
@@ -83,7 +83,7 @@
             lblMinStock.Location = new Point(292, 173);
             lblMinStock.Name = "lblMinStock";
             lblMinStock.Size = new Size(81, 15);
-            lblMinStock.TabIndex = 0;
+            lblMinStock.TabIndex = 10;
             lblMinStock.Text = "حداقل موجودی";
             // 
             // txtName
@@ -91,7 +91,7 @@
             txtName.Location = new Point(163, 6);
             txtName.Name = "txtName";
             txtName.Size = new Size(118, 23);
-            txtName.TabIndex = 1;
+            txtName.TabIndex = 0;
             // 
             // txtPrice
             // 
@@ -105,28 +105,28 @@
             txtSell.Location = new Point(163, 85);
             txtSell.Name = "txtSell";
             txtSell.Size = new Size(118, 23);
-            txtSell.TabIndex = 1;
+            txtSell.TabIndex = 2;
             // 
             // txtStock
             // 
             txtStock.Location = new Point(163, 127);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(118, 23);
-            txtStock.TabIndex = 1;
+            txtStock.TabIndex = 3;
             // 
             // txtMinStock
             // 
             txtMinStock.Location = new Point(163, 170);
             txtMinStock.Name = "txtMinStock";
             txtMinStock.Size = new Size(118, 23);
-            txtMinStock.TabIndex = 1;
+            txtMinStock.TabIndex = 4;
             // 
             // btnadd
             // 
             btnadd.Location = new Point(20, 198);
             btnadd.Name = "btnadd";
             btnadd.Size = new Size(97, 38);
-            btnadd.TabIndex = 2;
+            btnadd.TabIndex = 5;
             btnadd.Text = "ذخیره";
             btnadd.UseVisualStyleBackColor = true;
             btnadd.Click += btnadd_Click;
@@ -150,6 +150,7 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormAddProduct";
             Text = "افزودن کالا";
+            Load += FormAddProduct_Load;
             ResumeLayout(false);
             PerformLayout();
         }

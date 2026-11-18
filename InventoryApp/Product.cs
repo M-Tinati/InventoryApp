@@ -4,7 +4,7 @@ using System.Text;
 
 namespace InventoryApp
 {
-    internal class Product
+    public class Product
     {
         
 
@@ -15,7 +15,7 @@ namespace InventoryApp
         public int minstock;
 
 
-
+        
     }
     
 }
