@@ -18,25 +18,63 @@ namespace InventoryApp
         }
         private void FormAddProduct_Load(object sender, EventArgs e)
         {
-            
+
 
 
         }
         private void btnadd_Click(object sender, EventArgs e)
         {
-            Product products = new Product();
-            products.name = txtName.Text;
-            products.price = Convert.ToInt32(txtPrice.Text);
-            products.sell = Convert.ToInt32(txtSell.Text);
-            products.stock = Convert.ToInt32(txtStock.Text);
-            products.minstock = Convert.ToInt32(txtMinStock.Text);
-            inventory.AddProduct(products);
-            foreach (Product product in inventory.GetProducts())
+
             {
-                MessageBox.Show(product.name);
+
+                if (string.IsNullOrWhiteSpace(txtName.Text) ||
+                    string.IsNullOrWhiteSpace(txtPrice.Text) ||
+                    string.IsNullOrWhiteSpace(txtSell.Text) ||
+                    string.IsNullOrWhiteSpace(txtStock.Text) ||
+                    string.IsNullOrWhiteSpace(txtMinStock.Text))
+                {
+                    MessageBox.Show("مقدار ورودی‌ها نمی‌تواند خالی باشد");
+                    return;
+                }
+
+                try
+                {
+                    Product products = new Product();
+
+                    products.name = txtName.Text;
+                    products.price = Convert.ToInt32(txtPrice.Text);
+                    products.sell = Convert.ToInt32(txtSell.Text);
+                    products.stock = Convert.ToInt32(txtStock.Text);
+                    products.minstock = Convert.ToInt32(txtMinStock.Text);
+
+
+                    if (products.price < 0 || products.sell < 0 ||
+                        products.stock < 0 || products.minstock < 0)
+                    {
+                        MessageBox.Show("مقادیر عددی نمی‌توانند کمتر از صفر باشند");
+                        return;
+                    }
+
+                    inventory.AddProduct(products);
+
+                    MessageBox.Show("محصول با موفقیت اضافه شد");
+
+                    foreach (Product product in inventory.GetProducts())
+                    {
+                        MessageBox.Show(product.name);
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("لطفاً در فیلدهای عددی فقط عدد وارد کنید");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
-        
+
     }
 }
